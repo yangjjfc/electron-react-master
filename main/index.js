@@ -2,7 +2,7 @@
  * @Author: yangjj
  * @Date: 2019-12-16 13:11:10
  * @LastEditors: yangjj
- * @LastEditTime: 2019-12-16 16:59:17
+ * @LastEditTime: 2019-12-16 17:16:23
  * @Description: file content
  */
 require('./menu');
@@ -60,8 +60,8 @@ app.on('ready', () => {
     .then(() => handleMessage())//消息
     .then(() => onCrashed()) //崩溃重启
     .then(() => handleQuit()) //退出拦截
-    .then(() => createTray())
-    .then(() => { if (process.platform === 'win32') { autoStart() } })
+    .then(() => createTray()) //托盘
+    .then(() => { if (process.platform === 'win32') { autoStart() } }) //window系统开机自启
 })
 
 app.on('activate', function () {
